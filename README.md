@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Space Traveler's Hub
+# Space Travelers' Hub
 
 > Information comming soon.
 

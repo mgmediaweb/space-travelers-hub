@@ -1,0 +1,45 @@
+@import "../../config";
+
+.card {
+  background-color: $color-white;
+  border: solid 1px transparentize($color-border, 0.5);
+  border-radius: $rounded;
+  display: grid;
+  gap: $padding;
+  grid-template-columns: 100%;
+  margin-bottom: $padding*2;
+  padding: $padding;
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+
+  &-content {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &-image {
+    align-items: center;
+    display: flex;
+    height: 100%;
+  }
+}
+
+.content {
+  background-color: aqua;
+}
+
+// #######################################################################################
+// ################################### DESKTOP VERSION ###################################
+// #######################################################################################
+
+@media (min-width: $breakpoint-tablet) {
+  .card {
+    grid-template-columns: 30% 70%;
+  }
+}
