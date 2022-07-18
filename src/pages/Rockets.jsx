@@ -1,38 +1,25 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import Card from '../components/card/Card';
 
 const RocketsScreen = () => {
-  const rockets = [
-    {
-      id: 'a1',
-      image: 'https://live.staticflickr.com/65535/48954138962_ee541e6755_b.jpg',
-      title: 'Falcon 1',
-      reserved: false,
-      information: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque imperdiet fringilla nisi, eu commodo augue luctus in. Vestibulum bibendum est a nibh auctor, non posuere risus vulputate. Mauris tincidunt odio iaculis lorem elementum, eget dictum nibh malesuada.',
-    },
-    {
-      id: 'b2',
-      image: 'https://live.staticflickr.com/65535/48954138922_9c42173f08_b.jpg',
-      title: 'Falcon Heavy',
-      reserved: true,
-      information: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque imperdiet fringilla nisi, eu commodo augue luctus in. Vestibulum bibendum est a nibh auctor, non posuere risus vulputate. Mauris tincidunt odio iaculis lorem elementum, eget dictum nibh malesuada.',
-    },
-  ];
+  const { rockets } = useSelector((state) => state.rockets);
+  const rocketList = Object.keys(rockets);
 
   return (
     <section>
       <div className="container">
         {
-          rockets.map((item) => (
+          rocketList ? rocketList.map((item) => (
             <Card
-              key={item.id}
-              id={item.id}
-              image={item.image}
-              information={item.information}
-              reserved={item.reserved}
-              title={item.title}
+              key={item}
+              id={item}
+              image={rockets[item].imagen}
+              description={rockets[item].description}
+              reserved={rockets[item].reserved}
+              title={rockets[item].title}
             />
-          ))
+          )) : <div className="text-center">No Rockets Availables</div>
         }
       </div>
     </section>

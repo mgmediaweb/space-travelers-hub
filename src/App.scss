@@ -26,6 +26,16 @@
   transition: $transition;
 }
 
+a {
+  color: $color-primary;
+  text-decoration: none;
+
+  &:hover {
+    color: darken($color-primary, 33%);
+    text-decoration: underline;
+  }
+}
+
 p {
   margin-bottom: $padding;
 }
@@ -55,7 +65,7 @@ table {
 }
 
 section {
-  min-height: 100vh;
+  height: auto;
   padding-top: $header-height + ($padding*2);
   padding-bottom: $padding;
   width: 100%;
@@ -157,23 +167,23 @@ section {
   margin-top: $padding;
   width: 100%;
 
-  li:last-child {
-    border-bottom:solid 1px $color-border;
-  }
-
-  a {
+  li {
     background-color: transparent;
     border-top: solid 1px $color-border;
     border-left: solid 1px $color-border;
     border-right: solid 1px $color-border;
     color: $color-black;
-    display: block;    
+    display: block;
     padding: $padding;
     text-decoration: none;
 
     &:hover {
       background-color: transparentize($color-border, 0.85);
     }
+  }
+
+  li:last-child {
+    border-bottom: solid 1px $color-border;
   }
 }
 
@@ -193,21 +203,24 @@ section {
   &-width1 {
     width: 140px !important;
   }
+
   &-width2 {
     width: 170px !important;
-  }  
+  }
 }
 
 .text {
   &-center {
     text-align: center !important;
   }
+
   &-end {
     text-align: right !important;
   }
+
   &-start {
     text-align: left !important;
-  }    
+  }
 }
 
 // #######################################################################################
