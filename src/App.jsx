@@ -1,8 +1,11 @@
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
 } from 'react-router-dom';
+import { getRockets } from './redux/connectionAPI';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import MissionsScreen from './pages/Missions';
@@ -11,6 +14,12 @@ import RocketsScreen from './pages/Rockets';
 import './App.scss';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getRockets());
+  }, []);
+
   return (
     <div className="App">
       <Router>

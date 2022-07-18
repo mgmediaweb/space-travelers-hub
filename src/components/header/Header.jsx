@@ -68,7 +68,7 @@ const Header = () => {
                   Missions
                 </NavLink>
               </li>
-              <li style={{ display: menuMovil ? 'block' : 'none' }}>|</li>
+              <li>|</li>
               <li>
                 <NavLink to="/profile">
                   My Profile
@@ -82,24 +82,24 @@ const Header = () => {
       <div className={menuMovil ? 'menu-movil menu-show' : 'menu-movil menu-hide'}>
         <ul>
           <li role="presentation">
-            <Link to="/rockets" onClick={() => closeMenu()}>
+            <NavLink to="/rockets" onClick={() => closeMenu()}>
               Rockets
-            </Link>
+            </NavLink>
           </li>
           <li role="presentation">
-            <Link to="/missions" onClick={() => closeMenu()}>
+            <NavLink to="/missions" onClick={() => closeMenu()}>
               Missions
-            </Link>
+            </NavLink>
           </li>
           <li role="presentation">
-            <Link to="/profile" onClick={() => closeMenu()}>
+            <NavLink to="/profile" onClick={() => closeMenu()}>
               My Profile
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>
 
-      <div ref={cortain} className="cortain">.</div>
+      <div ref={cortain} className={menuMovil ? 'cortain cortain-show' : 'cortain cortain-hide'}>.</div>
     </>
   );
 };

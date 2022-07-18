@@ -44,11 +44,14 @@ nav {
 
   &-hide {
     backdrop-filter: none;
-    background-color: none;
+    background-color: transparent;
+    transition: $transition*2;
   }
+
   &-show {
     backdrop-filter: blur(5px);
     background-color: transparentize($color-secondary, 0.7);
+    transition: $transition*2;
   }
 }
 
@@ -67,6 +70,7 @@ nav {
 
   &:hover {
     opacity: 0.5;
+    text-decoration: none;
     transition: $transition;
   }
 
@@ -92,12 +96,12 @@ nav {
 }
 
 .menu-movil {
-  background-color: $color-white;
+  background-color: $color-background;
   display: block;
   left: 0;
   padding-top: $header-height;
   position: fixed;
-  transition: $transition;  
+  transition: $transition;
   width: 100%;
   z-index: 900;
 
@@ -105,11 +109,11 @@ nav {
     list-style-type: none;
 
     a {
-      background-color: $color-white;
+      background-color: $color-background;
       border-bottom: solid 1px $color-border;
       color: $color-black;
       display: block;
-      font-size: 1rem;        
+      font-size: 1rem;
       letter-spacing: $padding*0.2;
       padding: $padding*2;
       text-decoration: none;
@@ -125,11 +129,11 @@ nav {
   align-items: center;
   display: flex;
   justify-content: center;
-  height: 60px;  
+  height: 60px;
   width: 60px;
 
   &-icon {
-    font-size: 1.75rem;  
+    font-size: 1.75rem;
   }
 }
 
@@ -139,7 +143,7 @@ nav {
   }
 
   &-show {
-    top: 0px;
+    top: 0;
   }
 }
 
@@ -179,6 +183,7 @@ nav {
 
       li {
         display: inline-block;
+        margin-left: $padding*3;
       }
 
       a {
@@ -186,21 +191,22 @@ nav {
         display: inline-block;
         font-size: 1rem;
         letter-spacing: $padding*0.2;
-        margin-left: $padding*3;          
         text-decoration: none;
 
         &:hover {
+          background-color: $color-background;
           color: $color-primary;
+          text-decoration: none;
         }
-      }      
+      }
     }
   }
 
   .active {
-    background-color: $color-white !important;
+    background-color: $color-background !important;
     color: $color-primary;
     border-bottom: solid 1px $color-primary;
-  }  
+  }
 
   .logo-image {
     height: 100%;
@@ -208,5 +214,5 @@ nav {
 
   .movil-box {
     display: none;
-  }  
+  }
 }
