@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import getMissions from '../connectionAPIMissions';
+import { getMissions } from '../connectionAPI';
 
 const initialState = {
   missions: [],
