@@ -4,11 +4,11 @@ import { useSelector } from 'react-redux';
 
 const ProfileScreen = () => {
   const { rockets } = useSelector((state) => state.rockets);
-  const rocketList = Object.keys(rockets);
-  const rocketReserved = [];
-
   const { missions } = useSelector((state) => state.missions);
+
+  const rocketList = Object.keys(rockets);
   const missionList = Object.keys(missions);
+  const rocketReserved = [];
   const missionMember = [];
 
   if (rocketList.length) {

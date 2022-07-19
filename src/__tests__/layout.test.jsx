@@ -1,16 +1,19 @@
-import React, { Component } from "react";
+import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
-import { prettyDOM } from "@testing-library/dom";
+// import { prettyDOM } from "@testing-library/dom";
 
-import Card from "../components/card/Card";
+import Card from '../components/card/Card';
 // import Header from "../components/header/Header";
-import Footer from "../components/footer/Footer";
+import Footer from '../components/footer/Footer';
 
-let component = null
+test('Test the footer', () => {
+  const component = render(<Footer />);
+  expect(component.container).toHaveTextContent("Copyright Space Travelers' Hub");
+});
 
 test('Test the Card', () => {
-  component = render(<Card />);
+  const component = render(<Card />);
 
   const img = component.container.querySelector('img');
   console.log(img);
@@ -18,18 +21,12 @@ test('Test the Card', () => {
   // component.debug();
   // expect(compoment.container).toHaveTextContent("Copyright Space Travelers' Hub");
 });
-
-test('Test the footer', () => {
-  component = render(<Footer />);
-  expect(component.container).toHaveTextContent("Copyright Space Travelers' Hub");
-});
 /*
 test('Test the Header', () => {
   const compoment = render(<Header />);
   expect(compoment.container).toHaveTextContent("Copyright Space Travelers' Hub");
 });
 
-/*
 let container = null;
 
 beforeEach(() => {
