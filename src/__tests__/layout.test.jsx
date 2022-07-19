@@ -1,6 +1,6 @@
 import React from 'react';
-import '@testing-library/jest-dom/extend-expect';
-import { render } from '@testing-library/react';
+import 'jest-dom/extend-expect';
+import { /* cleanup, */ render } from '@testing-library/react';
 // import { prettyDOM } from "@testing-library/dom";
 
 import Card from '../components/card/Card';
@@ -12,14 +12,27 @@ test('Test the footer', () => {
   expect(component.container).toHaveTextContent("Copyright Space Travelers' Hub");
 });
 
+// afterEach(cleanup);
+/*
+function renderWithRedux(
+  component,
+  {
+    initialState,
+    store =
+  }
+) {
+
+}
+
+it('Test the Card', () => {
+  const { getByText } = render(<Card />);
+});
+*/
+
 test('Test the Card', () => {
   const component = render(<Card />);
-
-  const img = component.container.querySelector('img');
-  console.log(img);
-
-  // component.debug();
-  // expect(compoment.container).toHaveTextContent("Copyright Space Travelers' Hub");
+  // const img = component.container.querySelector('img');
+  console.log(component);
 });
 /*
 test('Test the Header', () => {
