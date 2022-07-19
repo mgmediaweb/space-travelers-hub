@@ -5,7 +5,7 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-import { getRockets } from './redux/connectionAPI';
+import { getMissions, getRockets } from './redux/connectionAPI';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import MissionsScreen from './pages/Missions';
@@ -18,6 +18,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getRockets());
+    dispatch(getMissions());
   }, []);
 
   return (

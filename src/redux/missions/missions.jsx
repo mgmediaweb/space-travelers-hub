@@ -12,10 +12,10 @@ const missions = createSlice({
   reducers: {
     updateMission: (state, action) => ({
       ...state,
-      mission: {
+      missions: {
         ...state.missions,
         [action.payload]: {
-          ...state.mission[action.payload],
+          ...state.missions[action.payload],
           reserved: !state.missions[action.payload].reserved,
         },
       },
@@ -29,7 +29,7 @@ const missions = createSlice({
     [getMissions.fulfilled]: (state, action) => ({
       ...state,
       status: 'success',
-      rockets: action.payload,
+      missions: action.payload,
     }),
     [getMissions.rejected]: (state) => ({
       ...state,
