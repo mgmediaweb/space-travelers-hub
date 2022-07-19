@@ -25,14 +25,14 @@ const createMissionList = (obj) => {
   obj.forEach((item) => {
     result = {
       ...result,
-      [item.id]:
+      [item.mission_id]:
       {
         description: item.description,
         title: item.mission_name,
+        member: false,
       },
     };
   });
-
   return result;
 };
 
