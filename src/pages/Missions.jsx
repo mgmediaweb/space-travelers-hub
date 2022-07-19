@@ -1,57 +1,11 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { updateMission } from '../redux/missions/missions';
 
 const MissionsScreen = () => {
-  const missions = [
-    {
-      id: 'a1',
-      title: 'Thaicon',
-      member: false,
-      information: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque imperdiet fringilla nisi, eu commodo augue luctus in. Vestibulum bibendum est a nibh auctor, non posuere risus vulputate. Mauris tincidunt odio iaculis lorem elementum, eget dictum nibh malesuada.',
-    },
-    {
-      id: 'a2',
-      title: 'Iridium NEXT',
-      member: true,
-      information: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque imperdiet fringilla nisi, eu commodo augue luctus in. Vestibulum bibendum est a nibh auctor, non posuere risus vulputate. Mauris tincidunt odio iaculis lorem elementum, eget dictum nibh malesuada.',
-    },
-    {
-      id: 'a3',
-      title: 'Thaicon',
-      member: false,
-      information: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque imperdiet fringilla nisi, eu commodo augue luctus in. Vestibulum bibendum est a nibh auctor, non posuere risus vulputate. Mauris tincidunt odio iaculis lorem elementum, eget dictum nibh malesuada.',
-    },
-    {
-      id: 'a4',
-      title: 'Iridium NEXT',
-      member: false,
-      information: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque imperdiet fringilla nisi, eu commodo augue luctus in. Vestibulum bibendum est a nibh auctor, non posuere risus vulputate. Mauris tincidunt odio iaculis lorem elementum, eget dictum nibh malesuada.',
-    },
-    {
-      id: 'a5',
-      title: 'Thaicon',
-      member: false,
-      information: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque imperdiet fringilla nisi, eu commodo augue luctus in. Vestibulum bibendum est a nibh auctor, non posuere risus vulputate. Mauris tincidunt odio iaculis lorem elementum, eget dictum nibh malesuada.',
-    },
-    {
-      id: 'a6',
-      title: 'Iridium NEXT',
-      member: true,
-      information: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque imperdiet fringilla nisi, eu commodo augue luctus in. Vestibulum bibendum est a nibh auctor, non posuere risus vulputate. Mauris tincidunt odio iaculis lorem elementum, eget dictum nibh malesuada.',
-    },
-    {
-      id: 'a7',
-      title: 'Thaicon',
-      member: false,
-      information: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque imperdiet fringilla nisi, eu commodo augue luctus in. Vestibulum bibendum est a nibh auctor, non posuere risus vulputate. Mauris tincidunt odio iaculis lorem elementum, eget dictum nibh malesuada.',
-    },
-    {
-      id: 'a8',
-      title: 'Iridium NEXT',
-      member: false,
-      information: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque imperdiet fringilla nisi, eu commodo augue luctus in. Vestibulum bibendum est a nibh auctor, non posuere risus vulputate. Mauris tincidunt odio iaculis lorem elementum, eget dictum nibh malesuada.',
-    },
-  ];
-
+  const { missions } = useSelector((state) => state.missions);
+  const missionList = Object.keys(missions);
+  const dispatch = useDispatch();
   return (
     <section>
       <div className="container">
@@ -67,22 +21,22 @@ const MissionsScreen = () => {
             </thead>
             <tbody>
               {
-                missions.map((mission) => (
-                  <tr key={mission.id}>
-                    <th className="table-width1 text-start">{mission.title}</th>
-                    <td>{mission.information}</td>
+                missionList.map((mission) => (
+                  <tr key={mission}>
+                    <th className="table-width1 text-start">{ missions[mission].title}</th>
+                    <td>{missions[mission].description}</td>
                     <td className="table-width1 text-center">
                       {
-                        mission.member ? <span className="badge-active">Active Member</span> : <span className="badge-secondary">Not a Member</span>
+                         missions[mission].member ? <span className="badge-active">Active Member</span> : <span className="badge-secondary">Not a Member</span>
                       }
                     </td>
                     <td className="table-width2 text-center">
                       {
-                        mission.member ? (
+                        missions[mission].member ? (
                           <button
                             type="button"
                             className="btn-outline-danger"
-                            onClick={() => console.log('Outline Button')}
+                            onClick={() => dispatch(updateMission(mission))}
                           >
                             Leave Mission
                           </button>
@@ -90,7 +44,7 @@ const MissionsScreen = () => {
                           <button
                             type="button"
                             className="btn-outline"
-                            onClick={() => console.log('Outline Button')}
+                            onClick={() => dispatch(updateMission(mission))}
                           >
                             Join Mission
                           </button>

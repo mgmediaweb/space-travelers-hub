@@ -16,7 +16,7 @@ const missions = createSlice({
         ...state.missions,
         [action.payload]: {
           ...state.missions[action.payload],
-          reserved: !state.missions[action.payload].reserved,
+          member: !state.missions[action.payload].member,
         },
       },
     }),
