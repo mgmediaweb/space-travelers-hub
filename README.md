@@ -2,7 +2,7 @@
 
 # Space Travelers' Hub
 
-> Information comming soon.
+> Website App of the lists of rockets and missions available in the company Space X, here you can reserve the rockets you prefer, you can also select the missions you would like to attend.
 
 
 ## Built With
@@ -41,20 +41,14 @@ To view this document on your local computer:
 👤 **Gonzalo A. Medina**
 
 - GitHub: [@mgmediaweb](https://github.com/mgmediaweb)
-- LinkedIn: [gonzalo-medina-g](https://www.linkedin.com/in/gonzalo-medina-g/)
 - Twitter: [@GonzoMedinaDev](https://twitter.com/GonzoMedinaDev)
+- LinkedIn: [gonzalo-medina-g](https://www.linkedin.com/in/gonzalo-medina-g/)
 
-👤 **Author2**
+👤 **Waqas Ahmad**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author3**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/waqaskanju)
+- Twitter: [@twitterhandle](https://twitter.com/waqaskanju)
+- LinkedIn: [@LinkedIn](https://www.linkedin.com/in/waqaskanju/)
 
 ## 🤝 Contributing
 

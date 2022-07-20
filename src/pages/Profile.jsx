@@ -4,8 +4,12 @@ import { useSelector } from 'react-redux';
 
 const ProfileScreen = () => {
   const { rockets } = useSelector((state) => state.rockets);
+  const { missions } = useSelector((state) => state.missions);
+
   const rocketList = Object.keys(rockets);
+  const missionList = Object.keys(missions);
   const rocketReserved = [];
+  const missionMember = [];
 
   if (rocketList.length) {
     rocketList.forEach((item) => {
@@ -18,18 +22,16 @@ const ProfileScreen = () => {
     });
   }
 
-  const missions = [
-    {
-      id: '1',
-      title: 'Thaicon',
-      url: '/missions?id=1',
-    },
-    {
-      id: '2',
-      title: 'Iridium NEXT',
-      url: '/missions?id=2',
-    },
-  ];
+  if (missionList.length) {
+    missionList.forEach((item) => {
+      if (missions[item].member) {
+        missionMember.push({
+          id: missionMember.length + 1,
+          title: missions[item].title,
+        });
+      }
+    });
+  }
 
   return (
     <section>
@@ -38,11 +40,9 @@ const ProfileScreen = () => {
           <h2><Link to="/missions">My Missions</Link></h2>
           <ul className="list-group">
             {
-              missions.map((item) => (
-                <li key={item.id}>
-                  {item.title}
-                </li>
-              ))
+              missionMember.length ? missionMember.map((item) => (
+                <li key={item.id}>{item.title}</li>
+              )) : <li>No missions selected</li>
             }
           </ul>
         </div>

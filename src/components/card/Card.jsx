@@ -50,14 +50,16 @@ const Card = (props) => {
 };
 
 Card.propTypes = {
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
   id: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.string,
   reserved: PropTypes.bool,
   title: PropTypes.string.isRequired,
 };
 
 Card.defaultProps = {
+  description: 'No information available',
+  image: 'https://farm1.staticflickr.com/929/28787338307_3453a11a77_b.jpg',
   reserved: false,
 };
 
